@@ -1,0 +1,9 @@
+E: cpackexample: bad-version-number ..
+E: cpackexample: extended-description-is-empty
+E: cpackexample: extended-description-is-empty
+E: cpackexample: no-changelog usr/share/doc/cpackexample/changelog.gz (native package)
+E: cpackexample: no-changelog usr/share/doc/cpackexample/changelog.gz (native package)
+E: cpackexample: no-copyright-file
+E: cpackexample: no-copyright-file
+W: cpackexample: no-manual-page [usr/bin/cpackexample]
+W: cpackexample: no-manual-page [usr/bin/cpackexample]

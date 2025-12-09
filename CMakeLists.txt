@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION "3.28")
 
-project("cpackexample" VERSION 0.1.0)
+project("cpackexample" VERSION 0.1.2)
 
 FIND_PACKAGE(deal.II 9.5 REQUIRED
   HINTS ${DEAL_II_DIR} ../ ../../ $ENV{DEAL_II_DIR}
@@ -20,3 +20,25 @@ target_link_libraries(cpackexamplelib Boost::filesystem ${YAML_CPP_LIBRARIES})
 
 DEAL_II_SETUP_TARGET("${PROJECT_NAME}")
 DEAL_II_SETUP_TARGET(cpackexamplelib)
+
+# Additions for exercise
+
+install(TARGETS cpackexample
+        RUNTIME DESTINATION bin
+)
+
+install(TARGETS cpackexamplelib
+        ARCHIVE DESTINATION lib
+        LIBRARY DESTINATION lib
+        RUNTIME DESTINATION lib
+)
+
+install(FILES
+        fem/fem.hpp
+        filesystem/filesystem.hpp
+        flatset/flatset.hpp
+        yamlParser/yamlParser.hpp
+        DESTINATION include/cpackexamplelib
+)
+
+include(cmake/CPackConfig.cmake)
